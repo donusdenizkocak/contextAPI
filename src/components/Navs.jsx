@@ -32,7 +32,7 @@ function Navs() {
             <Link className="nav-link" to="/people">
               People
             </Link>
-            {user.email ? (<Link className="nav-link" to="/login" onClick={()=>setUser({Email:"",password:""})}>
+            {user?.email ? (<Link className="nav-link" to="/login" onClick={()=>setUser({email:"",password:""})}>
               Logout
             </Link>) :(<Link className="nav-link" to="/login">
               Login
