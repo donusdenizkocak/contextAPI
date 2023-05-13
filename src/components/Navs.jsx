@@ -3,8 +3,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
+import { LoginContext } from "../context/LoginContext";
+import { useContext } from "react";
 
 function Navs() {
+  const {user,setUser} = useContext(LoginContext)
   return (
     <Navbar expand="md">
       <Container>
@@ -29,9 +32,12 @@ function Navs() {
             <Link className="nav-link" to="/people">
               People
             </Link>
-            <Link className="nav-link" to="/login">
+            {user.email ? (<Link className="nav-link" to="/login" onClick={()=>setUser({Email:"",password:""})}>
+              Logout
+            </Link>) :(<Link className="nav-link" to="/login">
               Login
-            </Link>
+            </Link>) }
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

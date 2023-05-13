@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   // const [user, setUser] = useState({ email: "", password: "" });
+
+  //consuming
   const {user,setUser}=useContext(LoginContext)
   const navigate= useNavigate()
 
